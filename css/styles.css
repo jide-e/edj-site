@@ -2000,3 +2000,16 @@ h3 {
     padding: 0.75rem 0.75rem;
   }
 }
+
+/* Industries: inline links in vertical body copy */
+.vertical__body a {
+  color: var(--blue-600);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color 0.2s;
+}
+
+.vertical__body a:hover {
+  color: var(--blue-500);
+}
