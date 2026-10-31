@@ -1613,6 +1613,15 @@ h3 {
   animation-delay: 0.9s;
 }
 
+/* Paint the kicker and headline immediately so they count as the
+   largest contentful paint; the subhead, buttons and note still fade in. */
+.hero--sport .hero__label,
+.hero--sport h1 {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
 /* Three numbers: stat tiles */
 .sport-numbers__head {
   text-align: center;
