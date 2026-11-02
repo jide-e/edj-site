@@ -978,11 +978,26 @@ h3 {
   font-size: 0.9rem;
 }
 
+.credentials__lead {
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+.credentials__grid--four {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
 .leader {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 2.5rem;
-  max-width: var(--container-narrow);
+  gap: 1.5rem;
 }
 
 .leader__photo {
@@ -1462,9 +1477,9 @@ h3 {
     padding: var(--section-pad-mobile) 0;
   }
 
-  .leader {
-    flex-direction: column;
-    gap: 1.5rem;
+  .leader-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .pillar,
