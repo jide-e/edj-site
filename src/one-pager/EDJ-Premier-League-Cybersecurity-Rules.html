@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EDJ Premier League Cybersecurity Rules</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 8.5in; height: 11in; }
+  body {
+    font-family: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    color: #1B2A41; background: #fff; font-size: 8pt; line-height: 1.32;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    display: flex; flex-direction: column; height: 11in; overflow: hidden;
+  }
+  :root { --navy: #0F1F3D; --blue: #1F8FFF; --blue-dk: #1470D6; --card: #F2F6FC; --line: #DCE5F2; --muted: #5B6B82; }
+
+  .topbar { height: 0.16in; background: var(--blue); }
+  .page { padding: 0.18in 0.42in 0 0.42in; flex: 1; display: flex; flex-direction: column; }
+
+  .header { display: flex; justify-content: space-between; align-items: flex-start; }
+  .logo-img { height: 0.62in; width: auto; display: block; margin: -0.06in 0 0 -0.06in; }
+  .contact { text-align: right; font-size: 8.4pt; color: var(--navy); line-height: 1.5; }
+  .contact b { font-weight: 700; }
+
+  h1 { font-size: 18pt; font-weight: 800; color: var(--navy); letter-spacing: -0.4pt; margin-top: 0.1in; line-height: 1.1; }
+  .sub { display: flex; align-items: center; gap: 7px; margin-top: 5px; font-size: 11.6pt; color: #233552; font-weight: 500; }
+  .sub::before { content: ""; display: inline-block; width: 4px; height: 15px; background: var(--blue); border-radius: 1px; }
+  .intro { margin-top: 5px; font-size: 7.9pt; color: #2B3B55; line-height: 1.35; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2in; margin-top: 8px; flex: 1; }
+  .sec { font-size: 9.4pt; font-weight: 700; letter-spacing: 0.4pt; color: var(--navy); text-transform: uppercase; padding-bottom: 3px; position: relative; margin-bottom: 7px; }
+  .sec::after { content: ""; position: absolute; left: 0; bottom: 0; width: 46px; height: 2.5px; background: var(--blue); }
+
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 7px; }
+  .tile { background: var(--card); border-radius: 7px; padding: 5px 6px 5px; text-align: center; }
+  .tile .n { font-size: 18pt; font-weight: 800; color: var(--blue); line-height: 1; }
+  .tile .l { font-size: 6.9pt; color: var(--muted); margin-top: 3px; line-height: 1.25; }
+  .tile .l b { color: var(--navy); font-weight: 700; display: block; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 7.1pt; }
+  th { text-align: left; font-size: 6.6pt; text-transform: uppercase; letter-spacing: 0.3pt; color: var(--muted); font-weight: 600; padding: 2px 4px 3px; border-bottom: 1.5px solid var(--line); }
+  th.c, td.c { text-align: center; width: 34px; }
+  td { padding: 1.3px 4px; border-bottom: 1px solid #E9EFF7; color: #1B2A41; }
+  td.c { font-weight: 600; color: #3A4A63; }
+  td.c.z { color: #B9C4D4; font-weight: 400; }
+  tr.tot td { font-weight: 800; color: var(--navy); border-top: 1.5px solid var(--line); border-bottom: none; padding-top: 3px; }
+  .src { font-size: 6.4pt; color: var(--muted); margin-top: 5px; line-height: 1.35; }
+
+  .box { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; margin-bottom: 4px; }
+  .box.tint { background: var(--card); border-color: transparent; }
+  .box h3 { font-size: 9pt; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .box p { font-size: 7.6pt; color: #2B3B55; line-height: 1.4; }
+  .box ul { list-style: none; margin-top: 2px; }
+  .box li { font-size: 7.6pt; color: #2B3B55; padding-left: 10px; position: relative; line-height: 1.4; margin-bottom: 1.5px; }
+  .box li::before { content: "•"; color: var(--blue); position: absolute; left: 0; font-weight: 700; }
+  .box li b { color: var(--navy); font-weight: 600; }
+
+  .cycle { display: flex; align-items: stretch; gap: 4px; margin-top: 5px; }
+  .step { flex: 1; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 5px 6px; }
+  .step .d { font-size: 9.2pt; font-weight: 800; color: var(--blue); line-height: 1; }
+  .step .t { font-size: 6.8pt; color: #2B3B55; margin-top: 3px; line-height: 1.3; }
+  .arrow { align-self: center; color: #A9B8CF; font-size: 10pt; font-weight: 700; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 4px; }
+  .half { border-radius: 6px; padding: 6px 7px; }
+  .half.a { background: #fff; border: 1px solid var(--line); }
+  .half.b { background: var(--navy); color: #fff; }
+  .half .k { font-size: 6.6pt; text-transform: uppercase; letter-spacing: 0.3pt; font-weight: 700; color: var(--blue); }
+  .half.b .k { color: #7FC0FF; }
+  .half .v { font-size: 7.3pt; margin-top: 2px; line-height: 1.35; }
+  .half.b .v { color: #E6EEF9; }
+
+  .pill { margin-top: auto; margin-bottom: 5px; background: var(--card); border-radius: 40px; padding: 5px 14px; text-align: center; font-weight: 700; color: var(--blue-dk); font-size: 7.9pt; letter-spacing: 0.1pt; }
+
+  .footer { background: var(--navy); color: #fff; padding: 0.12in 0.42in 0.13in; display: flex; justify-content: space-between; align-items: center; border-top: 5px solid var(--blue); }
+  .footer h2 { font-size: 13pt; font-weight: 800; }
+  .footer p { font-size: 8.4pt; color: #C9D6E8; margin-top: 3px; max-width: 4.4in; line-height: 1.4; }
+  .footer .fc { text-align: right; font-size: 9.6pt; font-weight: 700; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="page">
+  <div class="header">
+    <img src="../../img/logo.svg" alt="EDJ Consulting" class="logo-img">
+    <div class="contact"><b>edjconsult.com</b><br>UK office +44 20 3996 7458<br>US office +1 202 318 8873</div>
+  </div>
+
+  <h1>The Premier League's New Cybersecurity Rules</h1>
+  <div class="sub">166 requirements. Three deadlines. One rule that most clubs have not noticed.</div>
+  <p class="intro">Starting this season, every Premier League club must meet the League's Information Security Baselines. There are 166 requirements in 22 areas. They come into force in three phases over three years. Each club must send the League a progress report every January and a final report with evidence every April. The rules are on page 693 of a handbook that runs to more than 900 pages. Most clubs have IT vendors who can do the technical work. Few clubs have one person who owns the programme, the evidence, and the reporting to the League.</p>
+
+  <div class="cols">
+    <!-- LEFT -->
+    <div>
+      <div class="sec">What the rules require</div>
+      <div class="tiles">
+        <div class="tile"><div class="n">48</div><div class="l"><b>Phase One</b>by 30 April 2027</div></div>
+        <div class="tile"><div class="n">29</div><div class="l"><b>Phase Two</b>by 30 April 2028</div></div>
+        <div class="tile"><div class="n">89</div><div class="l"><b>Phase Three</b>by 30 April 2029</div></div>
+      </div>
+      <table>
+        <thead><tr><th>Area (Appendix 11)</th><th class="c">P1</th><th class="c">P2</th><th class="c">P3</th></tr></thead>
+        <tbody>
+          <tr><td>Risk management</td><td class="c">2</td><td class="c">2</td><td class="c">5</td></tr>
+          <tr><td>Governance</td><td class="c">2</td><td class="c">1</td><td class="c">4</td></tr>
+          <tr><td>Policies</td><td class="c">1</td><td class="c">1</td><td class="c">1</td></tr>
+          <tr><td>Personnel security</td><td class="c">2</td><td class="c">3</td><td class="c">2</td></tr>
+          <tr><td>Access &amp; authentication</td><td class="c">4</td><td class="c">3</td><td class="c">6</td></tr>
+          <tr><td>Assets</td><td class="c">1</td><td class="c">1</td><td class="c">4</td></tr>
+          <tr><td>Network &amp; internet</td><td class="c">6</td><td class="c z">–</td><td class="c">4</td></tr>
+          <tr><td>Endpoint hardening</td><td class="c">5</td><td class="c z">–</td><td class="c">7</td></tr>
+          <tr><td>Anti-malware</td><td class="c">6</td><td class="c z">–</td><td class="c">4</td></tr>
+          <tr><td>Email</td><td class="c">5</td><td class="c z">–</td><td class="c">2</td></tr>
+          <tr><td>Patching &amp; vulnerabilities</td><td class="c">1</td><td class="c">3</td><td class="c">2</td></tr>
+          <tr><td>Data retention</td><td class="c z">–</td><td class="c">1</td><td class="c">3</td></tr>
+          <tr><td>Data classification &amp; loss prevention</td><td class="c">2</td><td class="c">2</td><td class="c">5</td></tr>
+          <tr><td>Internet of Things</td><td class="c">2</td><td class="c">3</td><td class="c">5</td></tr>
+          <tr><td>Backups</td><td class="c">2</td><td class="c">1</td><td class="c">2</td></tr>
+          <tr><td>Assurance</td><td class="c">1</td><td class="c">2</td><td class="c">4</td></tr>
+          <tr><td>Incident response</td><td class="c">3</td><td class="c">1</td><td class="c">6</td></tr>
+          <tr><td>Cyber insurance</td><td class="c z">–</td><td class="c">2</td><td class="c">1</td></tr>
+          <tr><td>Third party / vendor</td><td class="c z">–</td><td class="c">2</td><td class="c">7</td></tr>
+          <tr><td>Accreditation</td><td class="c z">–</td><td class="c z">–</td><td class="c">3</td></tr>
+          <tr><td>Protective monitoring</td><td class="c">2</td><td class="c">1</td><td class="c">10</td></tr>
+          <tr><td>Audit</td><td class="c">1</td><td class="c z">–</td><td class="c">2</td></tr>
+          <tr class="tot"><td>Total</td><td class="c">48</td><td class="c">29</td><td class="c">89</td></tr>
+        </tbody>
+      </table>
+      <p class="src">Source: Premier League Handbook 2026/27, Rules J.9 to J.14 (pages 172 to 174) and Appendix 11, Premier League Information Security Baselines (pages 693 to 713). EDJ counted the requirements from the published rules.</p>
+      <div class="box tint" style="margin-top:8px;margin-bottom:0">
+        <h3>Your UK contact</h3>
+        <p><b>Lucia Ehimika</b><br>Executive Advisor, Technology &amp; Strategic Partnerships<br>lucia@edjconsult.com</p>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div>
+      <div class="sec">The yearly cycle</div>
+      <div class="box tint" style="padding-top:7px">
+        <p>Every season, with no end date (Rules J.10 to J.12):</p>
+        <div class="cycle">
+          <div class="step"><div class="d">10 Jan</div><div class="t">Club sends the League a progress report</div></div>
+          <div class="arrow">›</div>
+          <div class="step"><div class="d">+28 days</div><div class="t">If not compliant, club sends a detailed plan to fix the gaps</div></div>
+          <div class="arrow">›</div>
+          <div class="step"><div class="d">30 Apr</div><div class="t">Club sends a final report <b>with evidence</b></div></div>
+        </div>
+        <p style="margin-top:5px;font-size:7.4pt;color:#5B6B82">The League can ask for more information and evidence at any time. A breach is handled under the League's general disciplinary rules. The League Board can fine a club up to £100,000 or refer the case to an independent commission.</p>
+      </div>
+
+      <div class="sec" style="margin-top:3px">The rule most clubs have not noticed</div>
+      <div class="box">
+        <ul>
+          <li><b>Control 22.b (Phase One).</b> Each club must agree an audit plan with a <b>third-party auditor</b> for an independent security assessment <b>each season</b>. This is required from April 2027.</li>
+          <li><b>Controls 20.a to 20.c (Phase Three).</b> Each club must choose a recognised security framework, get executive approval for it, and have a third party audit the club against it on a regular basis.</li>
+        </ul>
+      </div>
+
+      <div class="sec" style="margin-top:3px">Phase One vs. Phase Three</div>
+      <div class="split">
+        <div class="half a"><div class="k">Phase One · 48 controls</div><div class="v">Technical controls: EDR, MFA, firewalls, network segmentation, email security, immutable backups, an incident response plan. An IT provider can do most of this work.</div></div>
+        <div class="half b"><div class="k">Phase Three · 89 controls</div><div class="v">Programme management: risk appetite, measuring whether controls work, vendor risk with KPIs, mature security monitoring, a three-year security strategy. An IT provider does not own this work. Someone at the club must.</div></div>
+      </div>
+
+      <div class="box" style="margin-top:5px">
+        <h3>Promoted clubs must catch up</h3>
+        <p>Under Rule J.14, a club promoted after this season must meet every phase that has already passed, by the next deadline. The Handbook gives this example: a club promoted for 2027/28 must meet Phase One <b>and</b> Phase Two by 30 April 2028.</p>
+      </div>
+
+      <div class="box tint">
+        <h3>Why EDJ</h3>
+        <p>EDJ gives technology leadership to regulated organisations that have vendors but no one who owns the programme. We have run this same model for US defence contractors under NIST 800-171 and CMMC: phased control frameworks, yearly evidence cycles, and remediation plans. We lead the programme. We do not run your systems and we do not sell software.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pill">Rules J.9 to J.14 • Appendix 11 • 22 areas • 166 requirements • 10 Jan progress report • 30 Apr evidence • Three phases to 2029</div>
+</div>
+
+<div class="footer">
+  <div>
+    <h2>Schedule a conversation.</h2>
+    <p>No sales pitch. We tell you where your club stands against Phase One and what the January report will ask of you.</p>
+  </div>
+  <div class="fc">edjconsult.com<br>you@edjconsult.com<br>UK office +44 20 3996 7458<br>US office +1 202 318 8873</div>
+</div>
+</body>
+</html>
